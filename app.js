@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-const dbURI = process.env.MONGODB_URI;
+const dbURI = 'mongodb://admin:EQEzlr65456@node31327-testing.app.ruk-com.cloud:27017/admin';
 mongoose.connect(dbURI);
 
 mongoose.connection.once('open', function() {
