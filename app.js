@@ -13,11 +13,11 @@ const port = process.env.PORT || 3000;
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI);
-
+    
 
 // listen for requrests
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+app.listen(dbURI, () => {
+    console.log(`App listening at ${dbURI}`);
   });
 
 app.get('/', (req, res) => {
