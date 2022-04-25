@@ -8,10 +8,10 @@ const app = express();
 const mongoose = require('mongoose');
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.SERVER_PORT || 3000;
 
 // Connect to MongoDB
-const dbURI = 'mongodb://admin:EQEzlr65456@node31327-testing.app.ruk-com.cloud:27017/admin';
+const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI);
 
 mongoose.connection.once('open', function() {
