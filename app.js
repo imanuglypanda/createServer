@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
-// mongoose.connect();
+mongoose.connect(dbURI);
 
 
 // listen for requrests
