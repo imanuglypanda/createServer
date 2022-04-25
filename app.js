@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-const dbURI = '';
+const dbURI = process.env.MONGODB_URI;
 // mongoose.connect();
 
 
