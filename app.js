@@ -13,11 +13,16 @@ const port = process.env.PORT || 3000;
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI);
-    
+
+mongoose.connection.once('open', function() {
+    console.log('Successfully connected to DB.');
+}).on('error', function(error) {
+    console.log('Connection error:', error);
+});
 
 // listen for requrests
-app.listen(dbURI, () => {
-    console.log(`App listening at ${dbURI}`);
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
   });
 
 app.get('/', (req, res) => {
